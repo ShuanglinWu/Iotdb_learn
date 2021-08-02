@@ -1,0 +1,16 @@
+周末两天把文件相关的看了，周一交个作业：设计自己的文件结构，能够写入10条时间序列，每条时间序列有10个点，每一条时间序列的形式是（序列id，<time, value>, <time, value>,..., ）
+
+
+实现一个打开文件的接口，做准备工作
+open(String filePath)
+
+实现一个写入接口，这个接口每次写入 1个时间序列的1个数据点：
+insert(String id, long time, double value)
+
+实现一个关闭文件的接口，将文件关闭（文件关闭时候所有写入的数据要持久化到磁盘上）。
+
+close()
+
+实现一个查询接口，这个接口查询一个文件里的一个时间序列的一段时间的数据
+
+double[] query(String filePath, String id, long startTime, long endTime)
